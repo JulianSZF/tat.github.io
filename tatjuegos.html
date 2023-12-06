@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Tat</title>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <section id="pantalla-juegos" class="what-trenta-days">
+            <div id="juegos">
+                <p>
+                    <img src="./assets/Escoge modulo.png" alt="Escoge Módulo" class="width-450px"> 
+                </p>
+
+                <p class="titulos">Matematicas</p>
+                <input type="radio" name="juegos" id="c-e-e-n" >
+                <label class="input-juegos" for="c-e-e-n">
+                    <p>¿Cual es el número?</p>
+                </label>
+                <button class="botones" onclick="verificarJuegoEscogido()">Seleccionar</button>
+                
+                <p class="titulos">Lenguaje / Español</p>
+                <input type="radio" name="juegos" id="c-e-l-l" >
+                <label class="input-juegos" for="c-e-l-l">
+                    <p>¿Cual es la letra?</p>
+                </label>
+                <button class="botones" onclick="verificarJuegoEscogido()">Seleccionar</button>
+
+                <p class="titulos">Gestión De Emociones</p>
+                <input type="radio" name="juegos" id="e-l-p" >
+                <label class="input-juegos" for="e-l-p">
+                    <p>Encuentra la pareja</p>
+                </label>
+                <button class="botones" onclick="verificarJuegoEscogido()">Seleccionar</button>
+            </div>
+        </section>
+        <script src="./js/tat.js"></script>
+    </body>
+</html>

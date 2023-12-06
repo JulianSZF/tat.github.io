@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: no-repeat center center fixed url('assets/PaisajeCascadas.gif');
+    background-size: cover;
+    height: 106vh;
+    margin: 0;
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.width-450px {
+    width: 450px;    
+}
+
+.not-trenta-days {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000059;
+    border: 2px solid #356abc;
+    height: 700px;
+    width: 500px;
+    gap: 30px;
+}
+
+.what-trenta-days {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000059;
+    border: 2px solid #356abc;
+    height: 800px;
+    width: 500px;
+    gap: 30px;
+}
+
+.yes-trenta-days {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 650px;
+    width: 420px;
+    border-radius: 20px;
+    border: 2px solid;
+    background-color: #8168009e;
+}
+
+.untitle-trenta-days {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000059;
+    border: 2px solid #356abc;
+    height: 920px;
+    width: 500px;
+    gap: 30px;
+}
+
+.subtitulo {
+    color: #ffcd00;
+    font-size: 30px;
+    font-family: 'Fredoka One', cursive;
+}
+
+#bienvenidos input {
+    display: inline-block;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    background: #00000081;
+}
+
+.botones {
+    width: 142px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 20px;
+    background: #00000047;
+    border: 2px solid #816800;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 18px;
+}
+
+.botones:hover, .input-juegos:hover, .input-juegos-numero:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    background: #00000081;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+#nombre {
+    height: 30px;
+    width: 300px;
+    border-radius: 20px;
+}
+
+#mensaje-funcio {
+    color: white;
+    margin-inline-start: 89px;
+    margin-inline-end: 89px;
+    font-size: 22px;
+}
+
+.titulos {
+    color: #ffcd00;
+    font-size: 30px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.titulos-juntos {
+    color: #ffcd00;
+    font-size: 30px;
+    margin-block: 0;
+    font-family: 'Fredoka One', cursive;
+}
+
+.titulos-otro {
+    color: #ffcd00;
+    font-size: 25px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.input-juegos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    background: #00000047;
+    border-radius: 20px;
+    color: white;
+}
+
+.input-juegos-numero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    background: #00000047;
+    border-radius: 20px;
+    color: white;
+    width: 65px;
+}
+
+.input-juegos-numero-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    background: #00000047;
+    border-radius: 20px;
+    color: black;
+    width: 85px;
+    height: 85px;
+    margin-block-start: 0;
+}
+
+.input-juegos-numero-secundarios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    background: #00000047;
+    border-radius: 20px;
+    color: black;
+    width: 60px;
+    height: 60px;
+    margin: 4px;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.display-flex-margin {
+    display: flex;
+    margin: 18px;
+}
+
+.no-gab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+#juegos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mensajes-poderes {
+    display: flex;
+    justify-content: space-between;
+    width: 142px;
+    height: 176px;
+    margin: 5px;
+    border-radius: 20px;
+    background: #00000047;
+    border: 2px solid #816800;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 14px;
+}
+
+.mensajes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 142px;
+    height: 176px;
+    margin: 5px;
+    border-radius: 20px;
+    background: #00000047;
+    border: 2px solid #816800;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+} 
+
+.mensajes img {
+    width: 91px;
+}
+
+#mensajes {
+    width: 446px;
+    background: #3b373799;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.bloque-resultado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.decoracion {
+    color: #ffcd00;
+    font-size: 2rem;
+    font-family: 'Fredoka One', cursive;
+    margin: 0;
+}
