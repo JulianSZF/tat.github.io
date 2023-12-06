@@ -21,6 +21,11 @@ const inputSexoAleatoriotwo= document.getElementById('sexo-aleatorio-two')
 const inputSexoAleatoriothree= document.getElementById('sexo-aleatorio-three')
 const inputSexoAleatoriofour= document.getElementById('sexo-aleatorio-four')
 const inputSexoAleatoriofive= document.getElementById('sexo-aleatorio-five')
+const inputSexoAleatoriosix= document.getElementById('sexo-aleatorio-six')
+const inputSexoAleatorioseven= document.getElementById('sexo-aleatorio-seven')
+const inputSexoAleatorioeight= document.getElementById('sexo-aleatorio-eight')
+const inputSexoAleatorionine= document.getElementById('sexo-aleatorio-nine')
+const inputSexoAleatorioten= document.getElementById('sexo-aleatorio-ten')
 let listSolitoOne
 let listOne
 let indexAciertoJugador
@@ -159,15 +164,15 @@ function listOneMate(nivel) {
     if (nivel === 'nivel1') {
         listOne = [1, 2, 3, 4, 5]
         listSolitoOne = [1, 2, 3, 4, 5]
-        espacioLabelNivelOne('nivel1')
-        espacioNivelOne()
+        espacioLabelNivelOne(nivel)
+        espacioNivelOne(nivel)
         compararLabelOne()
         
     } else if (nivel === 'nivel2') {
         listOne = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         listSolitoOne = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        espacioLabelNivelOne('nivel2')
-        espacioNivelOne()
+        espacioLabelNivelOne(nivel)
+        espacioNivelOne(nivel)
         compararLabelOne()
         
     }
@@ -223,205 +228,375 @@ function espacioLabelNivelOne(nivel) {
 }
 
 // verificar esta funcion para q se pueda utilizar en todos los niveles
-function espacioNivelOne() {
-    
-    if(listSolitoOne.length === 0) {
-        
-        revisarVictoriaLvlOne()
-        return
-    } else {
-        var indiceAleatorio = Math.floor(Math.random() * listSolitoOne.length)
-        var numeroSeleccionado = listSolitoOne.splice(indiceAleatorio, 1)[0]
+function espacioNivelOne(nivel) {
+        if(listSolitoOne.length === 0) {
 
-        document.getElementById('espacio-nivel-one').innerText = numeroSeleccionado
-    }
+            revisarVictoriaLvlOne(nivel)
+            return
+        } else {
+            var indiceAleatorio = Math.floor(Math.random() * listSolitoOne.length)
+            var numeroSeleccionado = listSolitoOne.splice(indiceAleatorio, 1)[0]
+
+            document.getElementById('espacio-nivel-one').innerText = numeroSeleccionado
+        }
 
 }
 
 // cambiar variables terminadas en Eight por One para q funcione
 function compararLabelOne() {
     var contenidoLabelOne = document.getElementById('espacio-nivel-one').innerText
-    var espacioNivelOne = document.getElementById('espacio-nivel-one-one')
+    var espacioNivelOneOne = document.getElementById('espacio-nivel-one-one')
 
-    if (contenidoLabelEisght == uno.numero) {
-        espacioNivelEigth.innerText = `${uno.nombre}`
-    } else if (contenidoLabelEight == dos.numero) {
-        espacioNivelEigth.innerText = `${dos.nombre}`
-    } else if (contenidoLabelEight == tres.numero) {
-        espacioNivelEigth.innerText = `${tres.nombre}`
-    } else if (contenidoLabelEight == cuatro.numero) {
-        espacioNivelEigth.innerText = `${cuatro.nombre}`
-    } else if (contenidoLabelEight == cinco.numero) {
-        espacioNivelEigth.innerText = `${cinco.nombre}`
-    } else if (contenidoLabelEight == seis.numero) {
-        espacioNivelEigth.innerText = `${seis.nombre}`
-    } else if (contenidoLabelEight == siete.numero) {
-        espacioNivelEigth.innerText = `${siete.nombre}`
-    } else if (contenidoLabelEight == ocho.numero) {
-        espacioNivelEigth.innerText = `${ocho.nombre}`
-    } else if (contenidoLabelEight == nueve.numero) {
-        espacioNivelEigth.innerText = `${nueve.nombre}`
-    } else if (contenidoLabelEight == diez.numero) {
-        espacioNivelEigth.innerText = `${diez.nombre}`
-    } else if (contenidoLabelEight == once.numero) {
-        espacioNivelEigth.innerText = `${once.nombre}`
-    } else if (contenidoLabelEight == doce.numero) {
-        espacioNivelEigth.innerText = `${doce.nombre}`
-    } else if (contenidoLabelEight == trece.numero) {
-        espacioNivelEigth.innerText = `${trece.nombre}`
-    } else if (contenidoLabelEight == catorce.numero) {
-        espacioNivelEigth.innerText = `${catorce.nombre}`
-    } else if (contenidoLabelEight == quince.numero) {
-        espacioNivelEigth.innerText = `${quince.nombre}`
-    } else if (contenidoLabelEight == diezYSeis.numero) {
-        espacioNivelEigth.innerText = `${diezYSeis.nombre}`
-    } else if (contenidoLabelEight == diezYSiete.numero) {
-        espacioNivelEigth.innerText = `${diezYSiete.nombre}`
-    } else if (contenidoLabelEight == diezYOcho.numero) {
-        espacioNivelEigth.innerText = `${diezYOcho.nombre}`
-    } else if (contenidoLabelEight == diezYNueve.numero) {
-        espacioNivelEigth.innerText = `${diezYNueve.nombre}`
-    } else if (contenidoLabelEight == veinte.numero) {
-        espacioNivelEigth.innerText = `${veinte.nombre}`
-    } else if (contenidoLabelEight == veinteYUno.numero) {
-        espacioNivelEigth.innerText = `${veinteYUno.nombre}`
-    } else if (contenidoLabelEight == veinteYDos.numero) {
-        espacioNivelEigth.innerText = `${veinteYDos.nombre}`
-    } else if (contenidoLabelEight == veinteYTres.numero) {
-        espacioNivelEigth.innerText = `${veinteYTres.nombre}`
-    } else if (contenidoLabelEight == veinteYCuatro.numero) {
-        espacioNivelEigth.innerText = `${veinteYCuatro.nombre}`
-    } else if (contenidoLabelEight == veinteYCinco.numero) {
-        espacioNivelEigth.innerText = `${veinteYCinco.nombre}`
-    } else if (contenidoLabelEight == veinteYSeis.numero) {
-        espacioNivelEigth.innerText = `${veinteYSeis.nombre}`
-    } else if (contenidoLabelEight == veinteYSiete.numero) {
-        espacioNivelEigth.innerText = `${veinteYSiete.nombre}`
-    } else if (contenidoLabelEight == veinteYOcho.numero) {
-        espacioNivelEigth.innerText = `${veinteYOcho.nombre}`
-    } else if (contenidoLabelEight == veinteYNueve.numero) {
-        espacioNivelEigth.innerText = `${veinteYNueve.nombre}`
-    } else if (contenidoLabelEight == treinta.numero) {
-        espacioNivelEigth.innerText = `${treinta.nombre}`
-    } else if (contenidoLabelEight == treintaYUno.numero) {
-        espacioNivelEigth.innerText = `${treintaYUno.nombre}`
-    } else if (contenidoLabelEight == treintaYDos.numero) {
-        espacioNivelEigth.innerText = `${treintaYDos.nombre}`
-    } else if (contenidoLabelEight == treintaYTres.numero) {
-        espacioNivelEigth.innerText = `${treintaYTres.nombre}`
-    } else if (contenidoLabelEight == treintaYCuatro.numero) {
-        espacioNivelEigth.innerText = `${treintaYCuatro.nombre}`
-    } else if (contenidoLabelEight == treintaYCinco.numero) {
-        espacioNivelEigth.innerText = `${treintaYCinco.nombre}`
-    } else if (contenidoLabelEight == treintaYSeis.numero) {
-        espacioNivelEigth.innerText = `${treintaYSeis.nombre}`
-    } else if (contenidoLabelEight == treintaYSiete.numero) {
-        espacioNivelEigth.innerText = `${treintaYSiete.nombre}`
-    } else if (contenidoLabelEight == treintaYOcho.numero) {
-        espacioNivelEigth.innerText = `${treintaYOcho.nombre}`
-    } else if (contenidoLabelEight == treintaYNueve.numero) {
-        espacioNivelEigth.innerText = `${treintaYNueve.nombre}`
-    } else if (contenidoLabelEight == cuarenta.numero) {
-        espacioNivelEigth.innerText = `${cuarenta.nombre}`
+    if (contenidoLabelOne == uno.numero) {
+        espacioNivelOneOne.innerText = `${uno.nombre}`
+    } else if (contenidoLabelOne == dos.numero) {
+        espacioNivelOneOne.innerText = `${dos.nombre}`
+    } else if (contenidoLabelOne == tres.numero) {
+        espacioNivelOneOne.innerText = `${tres.nombre}`
+    } else if (contenidoLabelOne == cuatro.numero) {
+        espacioNivelOneOne.innerText = `${cuatro.nombre}`
+    } else if (contenidoLabelOne == cinco.numero) {
+        espacioNivelOneOne.innerText = `${cinco.nombre}`
+    } else if (contenidoLabelOne == seis.numero) {
+        espacioNivelOneOne.innerText = `${seis.nombre}`
+    } else if (contenidoLabelOne == siete.numero) {
+        espacioNivelOneOne.innerText = `${siete.nombre}`
+    } else if (contenidoLabelOne == ocho.numero) {
+        espacioNivelOneOne.innerText = `${ocho.nombre}`
+    } else if (contenidoLabelOne == nueve.numero) {
+        espacioNivelOneOne.innerText = `${nueve.nombre}`
+    } else if (contenidoLabelOne == diez.numero) {
+        espacioNivelOneOne.innerText = `${diez.nombre}`
+    } else if (contenidoLabelOne == once.numero) {
+        espacioNivelOneOne.innerText = `${once.nombre}`
+    } else if (contenidoLabelOne == doce.numero) {
+        espacioNivelOneOne.innerText = `${doce.nombre}`
+    } else if (contenidoLabelOne == trece.numero) {
+        espacioNivelOneOne.innerText = `${trece.nombre}`
+    } else if (contenidoLabelOne == catorce.numero) {
+        espacioNivelOneOne.innerText = `${catorce.nombre}`
+    } else if (contenidoLabelOne == quince.numero) {
+        espacioNivelOneOne.innerText = `${quince.nombre}`
+    } else if (contenidoLabelOne == diezYSeis.numero) {
+        espacioNivelOneOne.innerText = `${diezYSeis.nombre}`
+    } else if (contenidoLabelOne == diezYSiete.numero) {
+        espacioNivelOneOne.innerText = `${diezYSiete.nombre}`
+    } else if (contenidoLabelOne == diezYOcho.numero) {
+        espacioNivelOneOne.innerText = `${diezYOcho.nombre}`
+    } else if (contenidoLabelOne == diezYNueve.numero) {
+        espacioNivelOneOne.innerText = `${diezYNueve.nombre}`
+    } else if (contenidoLabelOne == veinte.numero) {
+        espacioNivelOneOne.innerText = `${veinte.nombre}`
+    } else if (contenidoLabelOne == veinteYUno.numero) {
+        espacioNivelOneOne.innerText = `${veinteYUno.nombre}`
+    } else if (contenidoLabelOne == veinteYDos.numero) {
+        espacioNivelOneOne.innerText = `${veinteYDos.nombre}`
+    } else if (contenidoLabelOne == veinteYTres.numero) {
+        espacioNivelOneOne.innerText = `${veinteYTres.nombre}`
+    } else if (contenidoLabelOne == veinteYCuatro.numero) {
+        espacioNivelOneOne.innerText = `${veinteYCuatro.nombre}`
+    } else if (contenidoLabelOne == veinteYCinco.numero) {
+        espacioNivelOneOne.innerText = `${veinteYCinco.nombre}`
+    } else if (contenidoLabelOne == veinteYSeis.numero) {
+        espacioNivelOneOne.innerText = `${veinteYSeis.nombre}`
+    } else if (contenidoLabelOne == veinteYSiete.numero) {
+        espacioNivelOneOne.innerText = `${veinteYSiete.nombre}`
+    } else if (contenidoLabelOne == veinteYOcho.numero) {
+        espacioNivelOneOne.innerText = `${veinteYOcho.nombre}`
+    } else if (contenidoLabelOne == veinteYNueve.numero) {
+        espacioNivelOneOne.innerText = `${veinteYNueve.nombre}`
+    } else if (contenidoLabelOne == treinta.numero) {
+        espacioNivelOneOne.innerText = `${treinta.nombre}`
+    } else if (contenidoLabelOne == treintaYUno.numero) {
+        espacioNivelOneOne.innerText = `${treintaYUno.nombre}`
+    } else if (contenidoLabelOne == treintaYDos.numero) {
+        espacioNivelOneOne.innerText = `${treintaYDos.nombre}`
+    } else if (contenidoLabelOne == treintaYTres.numero) {
+        espacioNivelOneOne.innerText = `${treintaYTres.nombre}`
+    } else if (contenidoLabelOne == treintaYCuatro.numero) {
+        espacioNivelOneOne.innerText = `${treintaYCuatro.nombre}`
+    } else if (contenidoLabelOne == treintaYCinco.numero) {
+        espacioNivelOneOne.innerText = `${treintaYCinco.nombre}`
+    } else if (contenidoLabelOne == treintaYSeis.numero) {
+        espacioNivelOneOne.innerText = `${treintaYSeis.nombre}`
+    } else if (contenidoLabelOne == treintaYSiete.numero) {
+        espacioNivelOneOne.innerText = `${treintaYSiete.nombre}`
+    } else if (contenidoLabelOne == treintaYOcho.numero) {
+        espacioNivelOneOne.innerText = `${treintaYOcho.nombre}`
+    } else if (contenidoLabelOne == treintaYNueve.numero) {
+        espacioNivelOneOne.innerText = `${treintaYNueve.nombre}`
+    } else if (contenidoLabelOne == cuarenta.numero) {
+        espacioNivelOneOne.innerText = `${cuarenta.nombre}`
     } else {
         return
     }
 }
 
 // agregar resto de labels para comparar en todos los niveles
-function verificarAciertosLvlOne() {
+function verificarAciertosLvlOne(nivel) {
    
     var contenidoLabel = document.getElementById('espacio-label-nivel-one-a').innerText
     var contenidoLabe2 = document.getElementById('espacio-label-nivel-one-b').innerText
     var contenidoLabe3 = document.getElementById('espacio-label-nivel-one-c').innerText
     var contenidoLabe4 = document.getElementById('espacio-label-nivel-one-d').innerText
     var contenidoLabe5 = document.getElementById('espacio-label-nivel-one-e').innerText
+    var contenidoLabe6 = document.getElementById('espacio-label-nivel-one-f').innerText
+    var contenidoLabe7 = document.getElementById('espacio-label-nivel-one-g').innerText
+    var contenidoLabe8 = document.getElementById('espacio-label-nivel-one-h').innerText
+    var contenidoLabe9 = document.getElementById('espacio-label-nivel-one-i').innerText
+    var contenidoLabe10 = document.getElementById('espacio-label-nivel-one-j').innerText
     var contenidoLabePrincipal = document.getElementById('espacio-nivel-one').innerText
 
-    if (inputSexoAleatorioone.checked) {
-        if(contenidoLabel == contenidoLabePrincipal) {
-            crearMensaje("CORRECTO")
-            aciertosJugador++
-            spanAciertosJugador.innerHTML = aciertosJugador
-            espacioLabelNivelOne()
-            espacioNivelOne()
-            compararLabelOne()
+    if (nivel === 'nivel1') {
+        if (inputSexoAleatorioone.checked) {
+            if(contenidoLabel == contenidoLabePrincipal) {
+                crearMensaje("CORRECTO")
+                aciertosJugador++
+                spanAciertosJugador.innerHTML = aciertosJugador
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            } else {
+                crearMensaje("INCORRECTO")
+                aciertosEnemigo++
+                spanAciertosEnemigo.innerHTML = aciertosEnemigo
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            }
+        } else if (inputSexoAleatoriotwo.checked) {
+            if (contenidoLabe2 == contenidoLabePrincipal) {
+                crearMensaje("CORRECTO")
+                aciertosJugador++
+                spanAciertosJugador.innerHTML = aciertosJugador
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            } else {
+                crearMensaje("INCORRECTO")
+                aciertosEnemigo++
+                spanAciertosEnemigo.innerHTML = aciertosEnemigo
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            }
+        } else if (inputSexoAleatoriothree.checked) {
+            if (contenidoLabe3 == contenidoLabePrincipal) {
+                crearMensaje("CORRECTO")
+                aciertosJugador++
+                spanAciertosJugador.innerHTML = aciertosJugador
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            } else {
+                crearMensaje("INCORRECTO")
+                aciertosEnemigo++
+                spanAciertosEnemigo.innerHTML = aciertosEnemigo
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            }
+        } else if (inputSexoAleatoriofour.checked) {
+            if (contenidoLabe4 == contenidoLabePrincipal) {
+                crearMensaje("CORRECTO")
+                aciertosJugador++
+                spanAciertosJugador.innerHTML = aciertosJugador
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            } else {
+                crearMensaje("INCORRECTO")
+                aciertosEnemigo++
+                spanAciertosEnemigo.innerHTML = aciertosEnemigo
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            }
+        } else if (inputSexoAleatoriofive.checked) {
+            if (contenidoLabe5 == contenidoLabePrincipal) {
+                crearMensaje("CORRECTO")
+                aciertosJugador++
+                spanAciertosJugador.innerHTML = aciertosJugador
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            } else {
+                crearMensaje("INCORRECTO")
+                aciertosEnemigo++
+                spanAciertosEnemigo.innerHTML = aciertosEnemigo
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            }
         } else {
-            crearMensaje("INCORRECTO")
-            aciertosEnemigo++
-            spanAciertosEnemigo.innerHTML = aciertosEnemigo
-            espacioLabelNivelOne()
-            espacioNivelOne()
-            compararLabelOne()
+            alert('Selecciona un juego')
         }
-    } else if (inputSexoAleatoriotwo.checked) {
-        if (contenidoLabe2 == contenidoLabePrincipal) {
-            crearMensaje("CORRECTO")
-            aciertosJugador++
-            spanAciertosJugador.innerHTML = aciertosJugador
-            espacioLabelNivelOne()
-            espacioNivelOne()
-            compararLabelOne()
+    } else if (nivel === 'nivel2')
+        if (inputSexoAleatorioone.checked) {
+            if(contenidoLabel == contenidoLabePrincipal) {
+                crearMensaje("CORRECTO")
+                aciertosJugador++
+                spanAciertosJugador.innerHTML = aciertosJugador
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            } else {
+                crearMensaje("INCORRECTO")
+                aciertosEnemigo++
+                spanAciertosEnemigo.innerHTML = aciertosEnemigo
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            }
+        } else if (inputSexoAleatoriotwo.checked) {
+            if (contenidoLabe2 == contenidoLabePrincipal) {
+                crearMensaje("CORRECTO")
+                aciertosJugador++
+                spanAciertosJugador.innerHTML = aciertosJugador
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            } else {
+                crearMensaje("INCORRECTO")
+                aciertosEnemigo++
+                spanAciertosEnemigo.innerHTML = aciertosEnemigo
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            }
+        } else if (inputSexoAleatoriothree.checked) {
+            if (contenidoLabe3 == contenidoLabePrincipal) {
+                crearMensaje("CORRECTO")
+                aciertosJugador++
+                spanAciertosJugador.innerHTML = aciertosJugador
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            } else {
+                crearMensaje("INCORRECTO")
+                aciertosEnemigo++
+                spanAciertosEnemigo.innerHTML = aciertosEnemigo
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            }
+        } else if (inputSexoAleatoriofour.checked) {
+            if (contenidoLabe4 == contenidoLabePrincipal) {
+                crearMensaje("CORRECTO")
+                aciertosJugador++
+                spanAciertosJugador.innerHTML = aciertosJugador
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            } else {
+                crearMensaje("INCORRECTO")
+                aciertosEnemigo++
+                spanAciertosEnemigo.innerHTML = aciertosEnemigo
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            }
+        } else if (inputSexoAleatoriofive.checked) {
+            if (contenidoLabe5 == contenidoLabePrincipal) {
+                crearMensaje("CORRECTO")
+                aciertosJugador++
+                spanAciertosJugador.innerHTML = aciertosJugador
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            } else {
+                crearMensaje("INCORRECTO")
+                aciertosEnemigo++
+                spanAciertosEnemigo.innerHTML = aciertosEnemigo
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            }
+        } else if (inputSexoAleatoriosix.checked) {
+            if (contenidoLabe6 == contenidoLabePrincipal) {
+                crearMensaje("CORRECTO")
+                aciertosJugador++
+                spanAciertosJugador.innerHTML = aciertosJugador
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+
+            } else {
+                crearMensaje("INCORRECTO")
+                aciertosEnemigo++
+                spanAciertosEnemigo.innerHTML = aciertosEnemigo
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+
+            }
+        } else if (inputSexoAleatorioseven.checked) {
+            if (contenidoLabe7 == contenidoLabePrincipal) {
+                crearMensaje("CORRECTO")
+                aciertosJugador++
+                spanAciertosJugador.innerHTML = aciertosJugador
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            } else {
+                crearMensaje("INCORRECTO")
+                aciertosEnemigo++
+                spanAciertosEnemigo.innerHTML = aciertosEnemigo
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            }
+        } else if (inputSexoAleatorioeight.checked) {
+            if (contenidoLabe8 == contenidoLabePrincipal) {
+                crearMensaje("CORRECTO")
+                aciertosJugador++
+                spanAciertosJugador.innerHTML = aciertosJugador
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            } else {
+                crearMensaje("INCORRECTO")
+                aciertosEnemigo++
+                spanAciertosEnemigo.innerHTML = aciertosEnemigo
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            }
+        } else if (inputSexoAleatorionine.checked) {
+            if (contenidoLabe9 == contenidoLabePrincipal) {
+                crearMensaje("CORRECTO")
+                aciertosJugador++
+                spanAciertosJugador.innerHTML = aciertosJugador
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            } else {
+                crearMensaje("INCORRECTO")
+                aciertosEnemigo++
+                spanAciertosEnemigo.innerHTML = aciertosEnemigo
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            }
+        } else if (inputSexoAleatorioten.checked) {
+            if (contenidoLabe10 == contenidoLabePrincipal) {
+                crearMensaje("CORRECTO")
+                aciertosJugador++
+                spanAciertosJugador.innerHTML = aciertosJugador
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            } else {
+                crearMensaje("INCORRECTO")
+                aciertosEnemigo++
+                spanAciertosEnemigo.innerHTML = aciertosEnemigo
+                espacioLabelNivelOne(nivel)
+                espacioNivelOne(nivel)
+                compararLabelOne()
+            }
         } else {
-            crearMensaje("INCORRECTO")
-            aciertosEnemigo++
-            spanAciertosEnemigo.innerHTML = aciertosEnemigo
-            espacioLabelNivelOne()
-            espacioNivelOne()
-            compararLabelOne()
+            alert('Selecciona un juego')
         }
-    } else if (inputSexoAleatoriothree.checked) {
-        if (contenidoLabe3 == contenidoLabePrincipal) {
-            crearMensaje("CORRECTO")
-            aciertosJugador++
-            spanAciertosJugador.innerHTML = aciertosJugador
-            espacioLabelNivelOne()
-            espacioNivelOne()
-            compararLabelOne()
-        } else {
-            crearMensaje("INCORRECTO")
-            aciertosEnemigo++
-            spanAciertosEnemigo.innerHTML = aciertosEnemigo
-            espacioLabelNivelOne()
-            espacioNivelOne()
-            compararLabelOne()
-        }
-    } else if (inputSexoAleatoriofour.checked) {
-        if (contenidoLabe4 == contenidoLabePrincipal) {
-            crearMensaje("CORRECTO")
-            aciertosJugador++
-            spanAciertosJugador.innerHTML = aciertosJugador
-            espacioLabelNivelOne()
-            espacioNivelOne()
-            compararLabelOne()
-        } else {
-            crearMensaje("INCORRECTO")
-            aciertosEnemigo++
-            spanAciertosEnemigo.innerHTML = aciertosEnemigo
-            espacioLabelNivelOne()
-            espacioNivelOne()
-            compararLabelOne()
-        }
-    } else if (inputSexoAleatoriofive.checked) {
-        if (contenidoLabe5 == contenidoLabePrincipal) {
-            crearMensaje("CORRECTO")
-            aciertosJugador++
-            spanAciertosJugador.innerHTML = aciertosJugador
-            espacioLabelNivelOne()
-            espacioNivelOne()
-            compararLabelOne()
-        } else {
-            crearMensaje("INCORRECTO")
-            aciertosEnemigo++
-            spanAciertosEnemigo.innerHTML = aciertosEnemigo
-            espacioLabelNivelOne()
-            espacioNivelOne()
-            compararLabelOne()
-        }
-    } else {
-        alert('Selecciona un juego')
-        location.reaload()
-    }
     
 }
 
@@ -434,11 +609,19 @@ function crearMensaje(resultado) {
 }
 
 // poner variable nivel para diversos eventos en cada nivel
-function revisarVictoriaLvlOne() {
-    if (aciertosJugador == 5) {
-        crearMensajeFinal("¡¡FELICIDADES!!")
-    } else {
-        crearMensajeFinal('¡¡INTENTALO DE NUEVO!!')
+function revisarVictoriaLvlOne(nivel) {
+    if (nivel === 'nivel1') {
+        if (aciertosJugador == 5) {
+            crearMensajeFinal("¡¡FELICIDADES!!")
+        } else {
+            crearMensajeFinal('¡¡INTENTALO DE NUEVO!!')
+        }
+    } else if (nivel === 'nivel2') {
+        if (aciertosJugador >= 7) {
+            crearMensajeFinal("¡¡FELICIDADES!!")
+        } else {
+            crearMensajeFinal('¡¡INTENTALO DE NUEVO!!')
+        }
     }
 }
 
