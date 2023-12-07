@@ -4,7 +4,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background: no-repeat center center fixed url('assets/PaisajeCascadas.gif');
     background-size: cover;
-    height: 106vh;
+    height: 112vh;
     margin: 0;
     /* overflow: hidden; */
     display: flex;
@@ -60,7 +60,7 @@ body {
     justify-content: center;
     background-color: #00000059;
     border: 2px solid #356abc;
-    height: 920px;
+    height: 960px;
     width: 500px;
     gap: 30px;
 }
@@ -157,6 +157,7 @@ input:checked + label {
     border-radius: 20px;
     color: white;
     width: 65px;
+    margin: 4px;
 }
 
 .input-juegos-numero-principal {
@@ -187,6 +188,12 @@ input:checked + label {
 
 .display-flex {
     display: flex;
+}
+
+.display-flex-botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .display-flex-margin {
