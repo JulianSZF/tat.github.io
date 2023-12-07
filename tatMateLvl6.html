@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>tat</title>
+        <link rel="stylesheet" href="./styles.css">
+        
+        
+    </head>
+    <body>
+        <section id="n-s-m-o-6" class="untitle-trenta-days">
+            <div class="no-gab">
+                <p>
+                    <img src="./assets/cual es el numero.png" alt="¿Cuál es el numero?" class="width-450px">
+                </p>
+                <p class="titulos">Nivel 6</p>
+                <p class="titulos-juntos">texto explicativo</p>
+            </div>
+            <div class="yes-trenta-days">
+                <p id="espacio-nivel-one-one"></p>
+                <p id="espacio-nivel-one" class="input-juegos-numero-principal"></p>
+                <div class="display-flex">
+                    <input type="radio" name="numerosXT" id="sexo-aleatorio-one">
+                    <label id="espacio-label-nivel-one-a" class="input-juegos-numero-secundarios" for="sexo-aleatorio-one">
+                        
+                    </label>
+                    <input type="radio" name="numerosXT" id="sexo-aleatorio-two">
+                    <label id="espacio-label-nivel-one-b" class="input-juegos-numero-secundarios" for="sexo-aleatorio-two">
+                        
+                    </label>
+                    <input type="radio" name="numerosXT" id="sexo-aleatorio-three">
+                    <label id="espacio-label-nivel-one-c" class="input-juegos-numero-secundarios" for="sexo-aleatorio-three">
+                        
+                    </label>
+                    <input type="radio" name="numerosXT" id="sexo-aleatorio-four">
+                    <label id="espacio-label-nivel-one-d" class="input-juegos-numero-secundarios" for="sexo-aleatorio-four">
+                        
+                    </label>
+                    <input type="radio" name="numerosXT" id="sexo-aleatorio-five">
+                    <label id="espacio-label-nivel-one-e" class="input-juegos-numero-secundarios" for="sexo-aleatorio-five">
+                        
+                    </label>
+                </div>
+                <div class="display-flex">
+                    <input type="radio" name="numerosXT" id="sexo-aleatorio-six">
+                    <label id="espacio-label-nivel-one-f" class="input-juegos-numero-secundarios" for="sexo-aleatorio-six">
+                        
+                    </label>
+                    <input type="radio" name="numerosXT" id="sexo-aleatorio-seven">
+                    <label id="espacio-label-nivel-one-g" class="input-juegos-numero-secundarios" for="sexo-aleatorio-seven">
+                        
+                    </label>
+                    <input type="radio" name="numerosXT" id="sexo-aleatorio-eight">
+                    <label id="espacio-label-nivel-one-h" class="input-juegos-numero-secundarios" for="sexo-aleatorio-eight">
+                        
+                    </label>
+                    <input type="radio" name="numerosXT" id="sexo-aleatorio-nine">
+                    <label id="espacio-label-nivel-one-i" class="input-juegos-numero-secundarios" for="sexo-aleatorio-nine">
+                        
+                    </label>
+                    <input type="radio" name="numerosXT" id="sexo-aleatorio-ten">
+                    <label id="espacio-label-nivel-one-j" class="input-juegos-numero-secundarios" for="sexo-aleatorio-ten">
+                        
+                    </label>
+                </div>
+                <button id="boton-1" class="botones" onclick="verificarAciertosLvlOne('nivel2')">Seleccionar</button>
+
+            </div>
+            <div class="bloque-resultado">
+                <div id="resultado">Mucha Suerte</div>
+                <section id="reiniciar">
+                    <button class="botones" id="boton-reiniciar" onclick="reiniciarJuego()">Reiniciar</button>
+                </section>
+                
+            </div>
+
+            <div class="display-flex">
+                <div class="mensajes">
+                    <p id="aciertos-jugador" class="decoracion">0</p>
+                    <img src="./assets/chulito.png" alt="Correcto">
+                    <p>CORRECTO</p>
+                </div>
+
+                <div class="mensajes">
+                    <p id="aciertos-enemigo" class="decoracion">0</p>
+                    <img src="./assets/equis.png" alt="Incorrecto">
+                    <p>INCORRECTO</p>
+                </div>
+            </div>
+
+            <div>
+                <section id="botones-levels">
+                    <button class="botones" onclick="anteriorNivel('nivel6')" id="anterior-lvl">Anterior LVL</button>
+                    <button class="botones" onclick="siguienteNivel('nivel6')" id="siguiente-lvl">Siguiente LVL</button>
+                </section>
+            </div>
+        </section>
+        
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    listOneMate('nivel6')
+                })
+            </script>
+            <script src="./js/tat.js"></script>
+    </body>
+</html>
