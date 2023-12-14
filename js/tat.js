@@ -320,8 +320,8 @@ function listOneLeng(nivel) {
 function listEmo(nivel) {
     if (nivel === 'nivel1') {
         listEmo = [
-            './assets/xd (1).png'
-            
+            './assets/xd (1).png',
+            'xd'
         ]
     }
 }
