@@ -230,6 +230,28 @@ input:checked + label {
     align-items: center;
 }
 
+.card {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+  
+.card img {
+    width: 80px;
+}
+
+.memory-game {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+    margin: auto;
+  }
+
 .mensajes-poderes {
     display: flex;
     justify-content: space-between;

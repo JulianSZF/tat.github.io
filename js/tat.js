@@ -31,6 +31,15 @@ const inputSexoAleatoriotwelve= document.getElementById('sexo-aleatorio-twelve')
 const inputSexoAleatoriothirteen= document.getElementById('sexo-aleatorio-thirteen')
 const inputSexoAleatoriofourteen= document.getElementById('sexo-aleatorio-fourteen')
 const inputSexoAleatoriofifteen= document.getElementById('sexo-aleatorio-fifteen')
+const levels = {
+    1: ['./assets/Mesa de trabajo 1', './assets/Mesa de trabajo 1 copia', './assets/Mesa de trabajo 1 copia 2'],
+    2: ['./assets/Mesa de trabajo 1', './assets/Mesa de trabajo 1 copia', './assets/Mesa de trabajo 1 copia 2', './assets/Mesa de trabajo 1 copia 3']
+}
+const memoryGame = document.getElementById('memory-game')
+let cards
+let images
+let flippedCards = []
+let matchedCards = []
 let listSolitoOne
 let listOne
 let listSolitoTwo
@@ -319,12 +328,67 @@ function listOneLeng(nivel) {
 
 function listEmo(nivel) {
     if (nivel === 'nivel1') {
-        listEmo = [
-            './assets/xd (1).png',
-            'xd'
-        ]
+        
+        images = ['Mesa de trabajo 1.png', 'Mesa de trabajo 1 copia.png', 'Mesa de trabajo 1 copia 2.png']
+        cards = images.concat(images)
+        shuffle(cards)
+        renderCards()
     }
 }
+
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5)
+}
+
+function renderCards() {
+    memoryGame.innerHTML = ''
+    cards.forEach((imageName, index) => {
+      const card = document.createElement('div')
+      card.classList.add('card')
+      card.dataset.imageName = imageName
+      card.dataset.index = index
+
+      const img = document.createElement('img')
+      img.src = './assets/' + imageName
+      img.alt = 'Card Image'
+      
+      card.appendChild(img)
+      card.addEventListener('click', flipCard)
+      memoryGame.appendChild(card)
+    })
+}
+
+function flipCard() {
+    const card = this
+
+    if (flippedCards.length < 2 && !flippedCards.includes(card)) {
+        flippedCards.push(card)
+
+      if (flippedCards.length === 2) {
+        setTimeout(checkMatch, 1000)
+      }
+    }
+}
+
+function checkMatch() {
+    const [card1, card2] = flippedCards
+
+    if (card1.dataset.symbol === card2.dataset.symbol) {
+      // Coincidencia
+      matchedCards.push(card1, card2)
+      if (matchedCards.length === cards.length) {
+        alert('¡Felicidades! Has encontrado todos los pares.')
+      }
+    } else {
+      // No coincidencia, volvemos a voltear las cartas
+      card1.classList.remove('flipped')
+      card2.classList.remove('flipped')
+    }
+
+    flippedCards = [];
+}
+
+
 
 function siguienteNivel(nivel) {
 
