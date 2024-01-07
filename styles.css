@@ -241,6 +241,7 @@ input:checked + label {
     user-select: none;
     border: 2px solid black;
     border-radius: 20px;
+    background-color: #fffdfd47;
 }
 
 .card .content-container {
@@ -253,13 +254,16 @@ input:checked + label {
     width: 60px;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 9px;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
 
 .card .question-mark {
-    font-size: 18px;
+    font-size: 53px;
+    top: 0px;
+    left: 29px;
+    position: absolute;
 }
 
 .card.flipped .content-container img {

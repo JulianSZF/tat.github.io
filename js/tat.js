@@ -31,10 +31,9 @@ const inputSexoAleatoriotwelve= document.getElementById('sexo-aleatorio-twelve')
 const inputSexoAleatoriothirteen= document.getElementById('sexo-aleatorio-thirteen')
 const inputSexoAleatoriofourteen= document.getElementById('sexo-aleatorio-fourteen')
 const inputSexoAleatoriofifteen= document.getElementById('sexo-aleatorio-fifteen')
-const levels = {
-    1: ['./assets/Mesa de trabajo 1', './assets/Mesa de trabajo 1 copia', './assets/Mesa de trabajo 1 copia 2'],
-    2: ['./assets/Mesa de trabajo 1', './assets/Mesa de trabajo 1 copia', './assets/Mesa de trabajo 1 copia 2', './assets/Mesa de trabajo 1 copia 3']
-}
+
+
+
 const memoryGame = document.getElementById('memory-game')
 let cards
 let images
@@ -329,7 +328,37 @@ function listOneLeng(nivel) {
 function listEmo(nivel) {
     if (nivel === 'nivel1') {
         
-        images = ['Mesa de trabajo 1.png', 'Mesa de trabajo 1 copia.png', 'Mesa de trabajo 1 copia 2.png']
+        images = ['intento 1_Mesa de trabajo 1.png', 'Intento Final_Mesa de trabajo 1.png', 'Intento Final-02.png']
+        cards = images.concat(images)
+        shuffle(cards)
+        renderCards()
+    } else if (nivel === 'nivel2') {
+        images = ['intento 1_Mesa de trabajo 1.png', 'Intento Final_Mesa de trabajo 1.png', 'Intento Final-02.png', 'Intento Final-03.png']
+        cards = images.concat(images)
+        shuffle(cards)
+        renderCards()
+    } else if (nivel === 'nivel3') {
+        images = ['intento 1_Mesa de trabajo 1.png', 'Intento Final_Mesa de trabajo 1.png', 'Intento Final-02.png', 'Intento Final-03.png', 'Intento Final-04.png']
+        cards = images.concat(images)
+        shuffle(cards)
+        renderCards()
+    } else if (nivel === 'nivel4') {
+        images = ['intento 1_Mesa de trabajo 1.png', 'Intento Final_Mesa de trabajo 1.png', 'Intento Final-02.png', 'Intento Final-03.png', 'Intento Final-04.png', 'Intento Final-05.png']
+        cards = images.concat(images)
+        shuffle(cards)
+        renderCards()
+    } else if (nivel === 'nivel5') {
+        images = ['intento 1_Mesa de trabajo 1.png', 'Intento Final_Mesa de trabajo 1.png', 'Intento Final-02.png', 'Intento Final-03.png', 'Intento Final-04.png', 'Intento Final-05.png', 'Intento Final-06.png']
+        cards = images.concat(images)
+        shuffle(cards)
+        renderCards()
+    } else if (nivel === 'nivel6') {
+        images = ['intento 1_Mesa de trabajo 1.png', 'Intento Final_Mesa de trabajo 1.png', 'Intento Final-02.png', 'Intento Final-03.png', 'Intento Final-04.png', 'Intento Final-05.png', 'Intento Final-06.png', 'Intento Final-07.png']
+        cards = images.concat(images)
+        shuffle(cards)
+        renderCards()
+    } else {
+        images = ['intento 1_Mesa de trabajo 1.png', 'Intento Final_Mesa de trabajo 1.png', 'Intento Final-02.png', 'Intento Final-03.png', 'Intento Final-04.png', 'Intento Final-05.png', 'Intento Final-06.png', 'Intento Final-07.png', 'Intento Final-08.png']
         cards = images.concat(images)
         shuffle(cards)
         renderCards()
@@ -389,8 +418,12 @@ function checkMatch() {
     if (card1.dataset.imageName === card2.dataset.imageName) {
       // Coincidencia
       matchedCards.push(card1, card2)
+      crearMensaje("CORRECTO")
+      aciertosJugador++
+      spanAciertosJugador.innerHTML = aciertosJugador
+      
       if (matchedCards.length === cards.length) {
-        alert('¡Felicidades! Has encontrado todos los pares.')
+        crearMensajeFinal("¡¡FELICIDADES!!")
       }
     } else {
       // No coincidencia, volvemos a voltear las cartas
@@ -399,6 +432,10 @@ function checkMatch() {
 
       card1.querySelector('.content-container').classList.remove('revealed')
       card2.querySelector('.content-container').classList.remove('revealed')
+
+      crearMensaje("INCORRECTO")
+      aciertosEnemigo++
+      spanAciertosEnemigo.innerHTML = aciertosEnemigo
     }
 
     flippedCards = [];
@@ -446,6 +483,26 @@ function siguienteNivelLeng(nivel) {
     }
 }
 
+function siguienteNivelEmo(nivel) {
+
+    if (nivel === 'nivel1') {
+        window.location.href = 'tatEmoLvl2.html'
+    } else if (nivel === 'nivel2') {
+        window.location.href = 'tatEmoLvl3.html'
+    } else if (nivel === 'nivel3') {
+        window.location.href = 'tatEmoLvl4.html'
+    } else if (nivel === 'nivel4') {
+        window.location.href = 'tatEmoLvl5.html'
+    } else if (nivel === 'nivel5') {
+        window.location.href = 'tatEmoLvl6.html'
+    } else if (nivel === 'nivel6') {
+        window.location.href = 'tatEmoLvl7.html'
+    } else {
+        document.getElementById('anterior-lvl').display = true
+        alert('No hay un nivel despues a este')
+    }
+}
+
 function anteriorNivel(nivel) {
 
     if (nivel === 'nivel1') {
@@ -483,6 +540,26 @@ function anteriorNivelLeng(nivel) {
         window.location.href = 'tatLegLvl4.html'
     } else {
         window.location.href = 'tatLegLvl5.html'
+    }
+}
+
+function anteriorNivelEmo(nivel) {
+
+    if (nivel === 'nivel1') {
+        document.getElementById('anterior-lvl').display = true
+        alert('No hay un nivel anterior a este')
+    } else if (nivel === 'nivel2') {
+        window.location.href = 'tatEmoLvl1.html'
+    } else if (nivel === 'nivel3') {
+        window.location.href = 'tatEmoLvl2.html'
+    } else if (nivel === 'nivel4') {
+        window.location.href = 'tatEmoLvl3.html'
+    } else if (nivel === 'nivel5') {
+        window.location.href = 'tatEmoLvl4.html'
+    } else if (nivel === 'nivel6') {
+        window.location.href = 'tatEmoLvl5.html'
+    } else {
+        window.location.href = 'tatEmoLvl6.html'
     }
 }
 
