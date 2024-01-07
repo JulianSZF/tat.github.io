@@ -239,10 +239,43 @@ input:checked + label {
     align-items: center;
     cursor: pointer;
     user-select: none;
+    border: 2px solid black;
+    border-radius: 20px;
 }
+
+.card .content-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
   
 .card img {
-    width: 80px;
+    width: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.card .question-mark {
+    font-size: 18px;
+}
+
+.card.flipped .content-container img {
+    opacity: 1;
+}
+
+.card.flipped .content-container .question-mark {
+    opacity: 0;
+}
+  
+.card .content-container.revealed img {
+    opacity: 0;
+}
+ 
+.card .content-container.revealed .question-mark {
+    opacity: 1;
 }
 
 .memory-game {

@@ -351,8 +351,20 @@ function renderCards() {
       const img = document.createElement('img')
       img.src = './assets/' + imageName
       img.alt = 'Card Image'
-      
-      card.appendChild(img)
+      img.classList.add('hidden')
+
+      const contentContainer = document.createElement('div')
+      contentContainer.classList.add('content-container')
+
+      const questionMark = document.createElement('div')
+      questionMark.textContent = '?'
+      questionMark.classList.add('question-mark')
+
+      contentContainer.appendChild(img)
+      contentContainer.appendChild(questionMark)
+
+      card.appendChild(contentContainer)
+
       card.addEventListener('click', flipCard)
       memoryGame.appendChild(card)
     })
@@ -361,7 +373,8 @@ function renderCards() {
 function flipCard() {
     const card = this
 
-    if (flippedCards.length < 2 && !flippedCards.includes(card)) {
+    if (!card.classList.contains('flipped') && flippedCards.length < 2) {
+        card.classList.add('flipped')
         flippedCards.push(card)
 
       if (flippedCards.length === 2) {
@@ -373,7 +386,7 @@ function flipCard() {
 function checkMatch() {
     const [card1, card2] = flippedCards
 
-    if (card1.dataset.symbol === card2.dataset.symbol) {
+    if (card1.dataset.imageName === card2.dataset.imageName) {
       // Coincidencia
       matchedCards.push(card1, card2)
       if (matchedCards.length === cards.length) {
@@ -383,6 +396,9 @@ function checkMatch() {
       // No coincidencia, volvemos a voltear las cartas
       card1.classList.remove('flipped')
       card2.classList.remove('flipped')
+
+      card1.querySelector('.content-container').classList.remove('revealed')
+      card2.querySelector('.content-container').classList.remove('revealed')
     }
 
     flippedCards = [];
