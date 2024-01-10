@@ -2,21 +2,22 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>tat</title>
+        <title>Tat</title>
         <link rel="stylesheet" href="./styles.css">
         
         
     </head>
-    <body>
-        <section id="n-s-l-o-1" class="untitle-trenta-days">
+    <body style="height: 140vh">
+        <section id="n-s-l-o-1" class="untitle-trenta-days" style="height: 1165px">
             <div class="no-gab">
                 <p>
                     <img src="./assets/cual es la letra.png" alt="¿Cuál es el letra?" class="width-450px">
                 </p>
                 <p class="titulos">Nivel 1</p>
-                <p class="titulos-juntos">texto explicativo</p>
+                <p class="titulos-juntos">Tienes que encontrar el duplicado de la letra indicada que va de la (a) a la (e)</p>
             </div>
-            <div class="yes-trenta-days">
+            <div class="yes-trenta-days" style="height: 470px">
+                <p id="tiempoTranscurrido"><span id="tiempo">00:00:00</span></p>
                 <p id="espacio-nivel-one-one"></p>
                 <p id="espacio-nivel-one" class="input-juegos-numero-principal"></p>
                 <div class="display-flex-margin">
@@ -51,7 +52,11 @@
                 </section>
                 
             </div>
-
+            <table id="tablaDatos" border="1">
+                <tr>
+                    <th>Tiempo Total</th>
+                </tr>
+            </table>
             <div class="display-flex">
                 <div class="mensajes">
                     <p id="aciertos-jugador" class="decoracion">0</p>

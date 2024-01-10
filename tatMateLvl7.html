@@ -2,21 +2,22 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>tat</title>
+        <title>Tat</title>
         <link rel="stylesheet" href="./styles.css">
         
         
     </head>
-    <body>
-        <section id="n-s-m-o-7" class="untitle-trenta-days">
+    <body style="height: 145vh">
+        <section id="n-s-m-o-7" class="untitle-trenta-days" style="height: 1218px">
             <div class="no-gab">
                 <p>
                     <img src="./assets/cual es el numero.png" alt="¿Cuál es el numero?" class="width-450px">
                 </p>
                 <p class="titulos">Nivel 7</p>
-                <p class="titulos-juntos">texto explicativo</p>
+                <p class="titulos-juntos">Tienes que encontrar el duplicado del numero indicado que va del 20 (VEINTE) al 35 (TREINTA Y CINCO)</p>
             </div>
-            <div class="yes-trenta-days">
+            <div class="yes-trenta-days" style="height: 540px">
+                <p id="tiempoTranscurrido"><span id="tiempo">00:00:00</span></p>
                 <p id="espacio-nivel-one-one"></p>
                 <p id="espacio-nivel-one" class="input-juegos-numero-principal"></p>
                 <div class="display-flex">
@@ -95,7 +96,11 @@
                 </section>
                 
             </div>
-
+            <table id="tablaDatos" border="1">
+                <tr>
+                    <th>Tiempo Total</th>
+                </tr>
+            </table>
             <div class="display-flex">
                 <div class="mensajes">
                     <p id="aciertos-jugador" class="decoracion">0</p>

@@ -4,9 +4,8 @@ body {
     font-family: 'Poppins', sans-serif;
     background: no-repeat center center fixed url('assets/PaisajeCascadas.gif');
     background-size: cover;
-    height: 120vh;
+    height: 100vh;
     margin: 0;
-    /* overflow: hidden; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,7 +45,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 650px;
+    height: 450px;
     width: 420px;
     border-radius: 20px;
     border: 2px solid;
@@ -126,10 +125,11 @@ input:checked + label {
 }
 
 .titulos-juntos {
-    color: #ffcd00;
-    font-size: 30px;
+    color: bisque;
+    font-size: 20px;
     margin-block: 0;
     font-family: 'Fredoka One', cursive;
+    margin-left: 21px;
 }
 
 .titulos-otro {
@@ -345,4 +345,15 @@ input:checked + label {
     font-size: 2rem;
     font-family: 'Fredoka One', cursive;
     margin: 0;
+}
+
+#tiempoTranscurrido {
+    font-size: 24px;
+    color:  black;
+    
+}
+
+#tablaDatos {
+    background: wheat;
+
 }

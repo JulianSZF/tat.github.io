@@ -5,16 +5,17 @@
         <title>Tat</title>
         <link rel="stylesheet" href="./styles.css">
     </head>
-    <body>
-        <section id="n-s-e-o-5" class="untitle-trenta-days">
+    <body style="height: 155vh">
+        <section id="n-s-e-o-5" class="untitle-trenta-days" style="height: 1275px">
             <div class="no-gab">
                 <p>
                     <img src="./assets/gestion de emociones.png" alt="Gestión De Emociones" class="width-450px">
                 </p>
                 <p class="titulos">Nivel 5</p>
-                <p class="titulos-juntos">Encuentra la pareja</p>
+                <p class="titulos-juntos">Gira dos cartas y encuentra las caras con emociones iguales</p>
             </div>
-            <div class="yes-trenta-days">
+            <div class="yes-trenta-days" style="height: 620px">
+                <p id="tiempoTranscurrido"><span id="tiempo">00:00:00</span></p>
                 <div id="memory-game" class="memory-game">
                     
                 </div>
@@ -26,7 +27,11 @@
                 </section>
                 
             </div>
-        
+            <table id="tablaDatos" border="1">
+                <tr>
+                    <th>Tiempo Total</th>
+                </tr>
+            </table>
             <div class="display-flex">
                 <div class="mensajes">
                     <p id="aciertos-jugador" class="decoracion">0</p>

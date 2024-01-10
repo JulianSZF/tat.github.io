@@ -50,6 +50,8 @@ let indexAciertoJugador
 let indexAciertoEnemigo
 let aciertosJugador = 0
 let aciertosEnemigo = 0
+let tiempoTranscurrido = 0
+let temporizador
 
 class Numeros {
     constructor(numero, nombre) {
@@ -78,15 +80,15 @@ let diezYSiete = new Numeros ('17', 'DIECISIETE')
 let diezYOcho = new Numeros ('18', 'DIECIOCHO')
 let diezYNueve = new Numeros ('19', 'DIECINUEVE')
 let veinte = new Numeros ('20', 'VEINTE')
-let veinteYUno = new Numeros ('21', 'VEINTI Y UNO')
-let veinteYDos = new Numeros ('22', 'VEINTI Y DOS')
-let veinteYTres = new Numeros ('23', 'VEINTI Y TRES')
-let veinteYCuatro = new Numeros ('24', 'VEINTI Y CUATRO')
-let veinteYCinco = new Numeros ('25', 'VEINTI Y CINCO')
-let veinteYSeis = new Numeros ('26', 'VEINTI Y SEIS')
-let veinteYSiete = new Numeros ('27', 'VEINTI Y SIETE')
-let veinteYOcho = new Numeros ('28', 'VEINTI Y OCHO')
-let veinteYNueve = new Numeros ('29', 'VEINTI Y NUEVE')
+let veinteYUno = new Numeros ('21', 'VEINTIUNO')
+let veinteYDos = new Numeros ('22', 'VEINTIDOS')
+let veinteYTres = new Numeros ('23', 'VEINTITRES')
+let veinteYCuatro = new Numeros ('24', 'VEINTICUATRO')
+let veinteYCinco = new Numeros ('25', 'VEINTICINCO')
+let veinteYSeis = new Numeros ('26', 'VEINTISEIS')
+let veinteYSiete = new Numeros ('27', 'VEINTISIETE')
+let veinteYOcho = new Numeros ('28', 'VEINTIOCHO')
+let veinteYNueve = new Numeros ('29', 'VEINTINUEVE')
 let treinta = new Numeros ('30', 'TREINTA')
 let treintaYUno = new Numeros ('31', 'TREINTA Y UNO')
 let treintaYDos = new Numeros ('32', 'TREINTA Y DOS')
@@ -223,6 +225,28 @@ function verificarNivelEscogidoEmo() {
     
 }
 
+function formatearTiempo(segundos) {
+    const horas = Math.floor(segundos / 3600)
+    const minutos = Math.floor((segundos % 3600) / 60)
+    const segundosRestantes = segundos % 60
+
+    const formatoHora = pad(horas) + ':' + pad(minutos) + ':' + (segundosRestantes)
+    return formatoHora
+}
+
+function pad(valor) {
+    return valor < 10 ? '0' + valor : valor
+}
+
+function actualizarTiempoTranscurrido() {
+    document.getElementById('tiempo').innerText = formatearTiempo(tiempoTranscurrido)
+    tiempoTranscurrido++
+}
+
+function iniciarTemporizador() {
+    temporizador = setInterval(actualizarTiempoTranscurrido, 1000)
+}
+
 function listOneMate(nivel) {
 
     if (nivel === 'nivel1') {
@@ -231,6 +255,7 @@ function listOneMate(nivel) {
         espacioLabelNivelOne(nivel)
         espacioNivelOne(nivel)
         compararLabelOne()
+        iniciarTemporizador()
         
     } else if (nivel === 'nivel2') {
         listOne = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -238,6 +263,7 @@ function listOneMate(nivel) {
         espacioLabelNivelOne(nivel)
         espacioNivelOne(nivel)
         compararLabelOne()
+        iniciarTemporizador()
         
     } else if (nivel === 'nivel3') {
         listOne = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
@@ -245,6 +271,7 @@ function listOneMate(nivel) {
         espacioLabelNivelOne(nivel)
         espacioNivelOne(nivel)
         compararLabelOne()
+        iniciarTemporizador()
         
     } else if (nivel === 'nivel4') {
         listOne = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
@@ -252,6 +279,7 @@ function listOneMate(nivel) {
         espacioLabelNivelOne('nivel3')
         espacioNivelOne('nivel3')
         compararLabelOne()
+        iniciarTemporizador()
         
     } else if (nivel === 'nivel5') {
         listOne = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
@@ -259,6 +287,7 @@ function listOneMate(nivel) {
         espacioLabelNivelOne('nivel3')
         espacioNivelOne('nivel3')
         compararLabelOne()
+        iniciarTemporizador()
         
     } else if (nivel === 'nivel6') {
         listOne = [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
@@ -266,6 +295,7 @@ function listOneMate(nivel) {
         espacioLabelNivelOne('nivel3')
         espacioNivelOne('nivel3')
         compararLabelOne()
+        iniciarTemporizador()
         
     } else if (nivel === 'nivel7') {
         listOne = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
@@ -273,6 +303,7 @@ function listOneMate(nivel) {
         espacioLabelNivelOne('nivel3')
         espacioNivelOne('nivel3')
         compararLabelOne()
+        iniciarTemporizador()
         
     } else {
         listOne = [26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]
@@ -280,6 +311,7 @@ function listOneMate(nivel) {
         espacioLabelNivelOne('nivel3')
         espacioNivelOne('nivel3')
         compararLabelOne()
+        iniciarTemporizador()
         
     }
 }
@@ -291,36 +323,42 @@ function listOneLeng(nivel) {
         listSolitoTwo = ['a', 'b', 'c', 'd', 'e']
         espacioLabelNivelOneLeng(nivel)
         espacioNivelOneLeng(nivel)
+        iniciarTemporizador()
                 
     } else if (nivel === 'nivel2') {
         listTwo = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'ch', 'i']
         listSolitoTwo = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'ch', 'i']
         espacioLabelNivelOneLeng(nivel)
         espacioNivelOneLeng(nivel)
+        iniciarTemporizador()
                 
     } else if (nivel === 'nivel3') {
         listTwo = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'ch', 'i', 'j', 'k', 'l', 'll', 'm']
         listSolitoTwo = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'ch', 'i', 'j', 'k', 'l', 'll', 'm']
         espacioLabelNivelOneLeng(nivel)
         espacioNivelOneLeng(nivel)
+        iniciarTemporizador()
                 
     } else if (nivel === 'nivel4') {
         listTwo = ['f', 'g', 'h', 'ch', 'i', 'j', 'k', 'l', 'll', 'm', 'n', 'ñ', 'o', 'p', 'q']
         listSolitoTwo = ['f', 'g', 'h', 'ch', 'i', 'j', 'k', 'l', 'll', 'm', 'n', 'ñ', 'o', 'p', 'q']
         espacioLabelNivelOneLeng('nivel3')
         espacioNivelOneLeng('nivel3')
+        iniciarTemporizador()
                 
     } else if (nivel === 'nivel5') {
         listTwo = ['j', 'k', 'l', 'll', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 'rr', 's', 't', 'u']
         listSolitoTwo = ['j', 'k', 'l', 'll', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 'rr', 's', 't', 'u']
         espacioLabelNivelOneLeng('nivel3')
         espacioNivelOneLeng('nivel3')
+        iniciarTemporizador()
                 
     } else {
         listTwo = ['n', 'ñ', 'o', 'p', 'q', 'r', 'rr', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
         listSolitoTwo = ['n', 'ñ', 'o', 'p', 'q', 'r', 'rr', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
         espacioLabelNivelOneLeng('nivel3')
         espacioNivelOneLeng('nivel3')
+        iniciarTemporizador()
                 
     }
 }
@@ -332,36 +370,43 @@ function listEmo(nivel) {
         cards = images.concat(images)
         shuffle(cards)
         renderCards()
+        iniciarTemporizador()
     } else if (nivel === 'nivel2') {
         images = ['intento 1_Mesa de trabajo 1.png', 'Intento Final_Mesa de trabajo 1.png', 'Intento Final-02.png', 'Intento Final-03.png']
         cards = images.concat(images)
         shuffle(cards)
         renderCards()
+        iniciarTemporizador()
     } else if (nivel === 'nivel3') {
         images = ['intento 1_Mesa de trabajo 1.png', 'Intento Final_Mesa de trabajo 1.png', 'Intento Final-02.png', 'Intento Final-03.png', 'Intento Final-04.png']
         cards = images.concat(images)
         shuffle(cards)
         renderCards()
+        iniciarTemporizador()
     } else if (nivel === 'nivel4') {
         images = ['intento 1_Mesa de trabajo 1.png', 'Intento Final_Mesa de trabajo 1.png', 'Intento Final-02.png', 'Intento Final-03.png', 'Intento Final-04.png', 'Intento Final-05.png']
         cards = images.concat(images)
         shuffle(cards)
         renderCards()
+        iniciarTemporizador()
     } else if (nivel === 'nivel5') {
         images = ['intento 1_Mesa de trabajo 1.png', 'Intento Final_Mesa de trabajo 1.png', 'Intento Final-02.png', 'Intento Final-03.png', 'Intento Final-04.png', 'Intento Final-05.png', 'Intento Final-06.png']
         cards = images.concat(images)
         shuffle(cards)
         renderCards()
+        iniciarTemporizador()
     } else if (nivel === 'nivel6') {
         images = ['intento 1_Mesa de trabajo 1.png', 'Intento Final_Mesa de trabajo 1.png', 'Intento Final-02.png', 'Intento Final-03.png', 'Intento Final-04.png', 'Intento Final-05.png', 'Intento Final-06.png', 'Intento Final-07.png']
         cards = images.concat(images)
         shuffle(cards)
         renderCards()
+        iniciarTemporizador()
     } else {
         images = ['intento 1_Mesa de trabajo 1.png', 'Intento Final_Mesa de trabajo 1.png', 'Intento Final-02.png', 'Intento Final-03.png', 'Intento Final-04.png', 'Intento Final-05.png', 'Intento Final-06.png', 'Intento Final-07.png', 'Intento Final-08.png']
         cards = images.concat(images)
         shuffle(cards)
         renderCards()
+        iniciarTemporizador()
     }
 }
 
@@ -423,7 +468,10 @@ function checkMatch() {
       spanAciertosJugador.innerHTML = aciertosJugador
       
       if (matchedCards.length === cards.length) {
+        clearInterval(temporizador)
+        guardarDatos()
         crearMensajeFinal("¡¡FELICIDADES!!")
+        
       }
     } else {
       // No coincidencia, volvemos a voltear las cartas
@@ -647,10 +695,21 @@ function espacioLabelNivelOneLeng(nivel) {
     }
 }
 
+function guardarDatos() {
+    const tiempoTotal = formatearTiempo(tiempoTranscurrido)
+    const tablaDatos = document.getElementById('tablaDatos')
+    const fila = tablaDatos.insertRow()
+    const celdaTiempo = fila.innerHTML = tiempoTotal
+}
+
 function espacioNivelOne(nivel) {
         if(listSolitoOne.length === 0) {
 
             revisarVictoriaLvlOne(nivel)
+
+            clearInterval(temporizador)
+            guardarDatos()
+
             return
         } else {
             indiceAleatorio = Math.floor(Math.random() * listSolitoOne.length)
@@ -665,6 +724,8 @@ function espacioNivelOneLeng(nivel) {
     if(listSolitoTwo.length === 0) {
 
         revisarVictoriaLvlOne(nivel)
+        clearInterval(temporizador)
+        guardarDatos()
         return
     } else {
         indiceAleatorio = Math.floor(Math.random() * listSolitoTwo.length)
@@ -1803,4 +1864,13 @@ function reiniciarJuego() {
     location.reload()
 }
 
-window.addEventListener('load', verificarSection())
+window.addEventListener('load', verificarSection)
+
+window.addEventListener('beforeunload', function (event) {
+    const mensaje = "¿Estás seguro de que quieres abandonar la página? Se perderael avance con el tiempo";
+    const resultado = window.confirm(mensaje);
+    
+    if (!resultado) {
+        event.returnValue = "";
+    }
+})
