@@ -357,3 +357,28 @@ input:checked + label {
     background: wheat;
 
 }
+
+@media (max-width: 375px) {
+    body {
+        height: 923px;
+        width: auto;
+    }
+
+    .width-450px {
+        width: 277px;
+    }
+
+    .subtitulo {
+        font-size: 25px;
+    }
+
+    #nombre {
+        width: 230px;
+    }
+
+    .not-trenta-days {
+        width: 300px;
+    }
+
+
+}
