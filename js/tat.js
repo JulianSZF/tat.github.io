@@ -225,6 +225,11 @@ function verificarNivelEscogidoEmo() {
     
 }
 
+function mostrarMenu() {
+    var menu = document.getElementById('menu')
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block'
+}
+
 function formatearTiempo(segundos) {
     const horas = Math.floor(segundos / 3600)
     const minutos = Math.floor((segundos % 3600) / 60)

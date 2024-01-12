@@ -74,6 +74,70 @@ body {
     display: inline-block;
 }
 
+    /* top: 70px;
+    left: 470px;
+
+    top: 25px;
+    left: 465px; */
+
+#menu {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    background-color: #00000081;
+    border: 1px solid #000000d8;
+    border-radius: 20px;
+}
+
+#menu a {
+    display: block;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.menu-a {
+    top: 146px;
+    left: 580px;
+}
+
+.menu-a2 {
+    top: 70px;
+    left: 470px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    background: #00000081;
+    border-radius: 20px;
+    color: white;
+    width: 65px;
+    margin: 4px;
+    height: 40px;
+    position: absolute;
+    top: 100px;
+    left: 570px;
+}
+
+.menu2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    background: #00000081;
+    border-radius: 20px;
+    color: white;
+    width: 65px;
+    margin: 4px;
+    height: 40px;
+    position: absolute;
+    top: 25px;
+    left: 465px;
+}
+
 input {
     display: none;
 }
@@ -377,7 +441,7 @@ input:checked + label {
     }
 
     .not-trenta-days {
-        width: 300px;
+        width: 700px;
     }
 
 
